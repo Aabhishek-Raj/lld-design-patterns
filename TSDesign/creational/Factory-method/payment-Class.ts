@@ -30,6 +30,7 @@ class CardPayment implements Payment {
 abstract class PaymentCreator {
   abstract createPayment(): Payment
 
+   // business logic
   process(amount: number) {
     const payment = this.createPayment()
     payment.pay(amount)

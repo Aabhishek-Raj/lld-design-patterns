@@ -43,13 +43,18 @@ class User {
 }
 
 class UserRepository {
-    create(user: any) {}
+    create(user: any) {
+      console.log("created user: " + user.username)
+    }
 }
 
 class EmailService {
-    sendWelcome(user: any) {}
+    sendWelcome(user: any) {
+      console.log('Email send to: ' + user )
+    }
 }
 
+// only orchestrates the use case
 class UserService {
   constructor(
     private userRepo: UserRepository,
@@ -61,3 +66,9 @@ class UserService {
     this.emailService.sendWelcome(user.getEmail())
   }
 }
+
+// const user = new UserService(new UserRepository(), new EmailService())
+
+// const u = new User("Abhishek", "Abhishek@gamil", "134")
+
+// user.register(u)

@@ -9,7 +9,7 @@ class PenguinB extends BirdBad {
   }
 }
 // This breaks LSP because:
-function makeBirdFly(bird: BirdBad) {
+function makeBirdFlyB(bird: BirdBad) {
   bird.fly(); // error
 }
 
@@ -22,11 +22,19 @@ interface FlyingBird extends Bird {
 }
 
 class Sparrow implements FlyingBird {
-  fly() {}
+  fly() {
+    console.log('Sparrow is flying')
+  }
 }
 
 class Penguin implements Bird {
-  swim() {}
+  swim() { console.log('Penguin is swimming')}
 }
+
+// function makeBirdFly(bird: FlyingBird) {
+//   bird.fly()
+
+// }
+
 
 
